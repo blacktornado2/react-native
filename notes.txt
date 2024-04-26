@@ -1,0 +1,10 @@
+Components are compiled:
+
+Views are compiled (ie.e. the JSX code/components), and not the JS logic
+
+browser         Android             ios              react-native JSX
+<div>    -    android.View   -     UIView       -        <View/>
+<input>  -    EditText       -    UITextField   -      <TextInput>  
+
+React Native maps(and compiles) reusable components to respective platform equivalents(native views)
+Logic(JS) runs on a JS thread, hosted by RN (in the app)
