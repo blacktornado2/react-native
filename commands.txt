@@ -1,0 +1,26 @@
+* If having any issue with any command, use flag --help 
+
+java --version : check which version of java and openjdk is installed
+
+* Expo
+- npx create-expo-app <path> : Create a new project with expo, project with some default functionalities 
+- npx create-expo-app <path> --template : Create a new project with expo, and choose template to begin with(-t is shorthand for template)
+- npx create-expo-app <path> --template blank : Create a minimal expo-app
+- npx create-expo-app <path> --example <Example> : Create an expo app with example template(e.g. with-router, with-nextjs, with-formik. ref: https://github.com/expo/examples)
+
+* react-native CLI
+- npx react-native init <path> : Create a new project with react-native
+- npx react-native start : Start the server
+- npx react-native run-android : Runs the app(created using react-native)
+- npx react-native run-ios : Runs the app(created using react-native)
+- npx react-native doctor : Analyse the build process in the app, and tells the errors and warnings
+
+* npm(node package manager)
+- npm start : start the server(for expo apps, this command translates to expo start)
+- npm start --reset-cache : start the server and reset the cache
+- npm i -g expo-cli : install expo-cli globally
+- expo-cli start --tunnel : start the server(metro bundler) with a tunnel (useful when running app on a physical device)
+ 
+* ADB(Android Debug Bridge)
+- adb devices : list the devices
+- adb --help : list all tge commands of adb

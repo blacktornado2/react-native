@@ -1,0 +1,69 @@
+React Native is an open source framework for building Android and iOS applications using React and the app platform’s native capabilities.
+
+On MacOS, we can have both Android Studio and XCode, but on Windows, we cannot have XCode
+
+Components are compiled:
+
+Views are compiled (i.e. the JSX code/components), and not the JS logic
+
+Browser                    Android               ios                 react-native JSX
+<div>                 -   <ViewGroup>     -     <UIView>        -        <View>
+<p>                   -   <TextView>      -   <UITextView>      -        <Text>
+<input type="text">   -   <EditText>      -   <UITextField>     -      <TextInput>  
+<img>                 -   <ImageView>     -   <UIImageView>     -        <Image>
+
+React Native maps(and compiles) reusable components to respective platform equivalents(native views)
+Logic(JS) runs on a JS thread, hosted by RN (in the app)
+
+There is no CSS in react-native. Use either use Inline styles or StyleSheet Objects
+
+React native benefits:
+- Single Codebase(Cross-platform compatibility)
+- Native component support
+- Hot reloading(changes reflect in real-time)
+- Development faster(don't have to rebuild whole app again & again)
+- Strong community support
+
+React native is used by these apps:
+- Facebook(Meta)
+- Messenger(Meta)
+- Microsoft Outlook
+- Microsoft teams
+- Shopify
+- Flipkart
+- Discord
+
+NativeWind allows us to write TailwindCSS like syntax in our React-Native app
+
+<Text> : just like p and h* tags in HTML, display text
+
+<View> : used to create layout structures for other components, uses flexbox by default(by-default flex-direction is column in react-native)
+
+<TouchableOpacity> : fades in opacity when pressed, button, fully-customisable
+
+<Button> : native component, very less customisable
+
+<TextInput> : onChangeText, 
+
+<ScrollView> : Use scroll View as it is scrollable unlike view, props: pagingEnabled, horizontal
+
+<FlatList> : alternative to ScrollView, use when we have a long list, not all items are rendered at the same time, props: data, renderItem
+
+<ActivityIndicator> : show loader(spinner), customise size and color
+
+Installation
+
+1. Windows
+Node.js
+Java11(Openjdk) (can install using chocolatey)
+Android Studio & Android SDK
+Setup PATH(environment variable) of JAVA_HOME, ANDOIRD_SDK_ROOT(ANDROID_HOME), android platform tools
+(There are two methods of setting environment variable: set direct variable(key-value pair) or set it's value in path)
+Download atleast 2 versions of android in android studio sdk manager
+
+Resource:
+
+useColorScheme is a hook in react-native which returns 'light'/'dark'/null based on the current user preferred color scheme
+
+Misc.
+chocolatey is a package manager for windows

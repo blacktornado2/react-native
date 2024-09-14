@@ -1,0 +1,20 @@
+Resource: https://www.youtube.com/watch?v=mJ3bGvy0WAY
+dependencies: expo-font, axios, react-native-dotenv,  
+SafeAreaView
+expo-router: Stack, useRouter, Stack.Screen(options prop)
+flexBox
+How to implement custom font, font family which isn't available in the system
+WHy some modules are imported as this: import * as SplashScreen from "expo-splash-screen"; Yup also
+Flatlist details
+React Hooks: All basic hooks
+custom hooks
+How to use dotenv in react-native
+try-catch-finally
+checkImageURL function and its regex
+routes in react-native
+useSearchParams hook use
+dynamic route
+refreshontrol
+self-closing Text element?
+self-closing View element?
+?? operator in JS
