@@ -127,17 +127,17 @@ useColorScheme is a hook in react-native which returns 'light'/'dark'/null based
   1. Platform module: ex: import {Platform} from 'react-native'; Platform.OS => 'android', 'ios', 
   2. Platform specific extension: make different files, ex: BigButton.ios.js, BigButton.android.js , RN will detect the file and load accordingly
 
-Installation
+ -------------------------------------------- INSTALLATION --------------------------------------------
 
-1. Windows
-Node.js
-Java11(Openjdk) (can install using chocolatey)
-Android Studio & Android SDK
-Setup PATH(environment variable) of JAVA_HOME, ANDOIRD_SDK_ROOT(ANDROID_HOME), android platform tools
-(There are two methods of setting environment variable: set direct variable(key-value pair) or set it's value in path)
-Download atleast 2 versions of android in android studio sdk manager
+  1. Windows
+  Node.js
+  Java11(Openjdk) (can install using chocolatey)
+  Android Studio & Android SDK
+  Setup PATH(environment variable) of JAVA_HOME, ANDOIRD_SDK_ROOT(ANDROID_HOME), android platform tools
+  (There are two methods of setting environment variable: set direct variable(key-value pair) or set it's value in path)
+  Download atleast 2 versions of android in android studio sdk manager
 
-Resource:
+  Resource:
 
-Misc.
-chocolatey is a package manager for windows
+  Misc.
+  chocolatey is a package manager for windows
