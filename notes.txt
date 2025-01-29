@@ -1,55 +1,131 @@
-React Native is an open source framework for building Android and iOS applications using React and the app platform’s native capabilities.
+- React Native is an open source framework for building Android and iOS applications using React and the app platform’s native capabilities.
 
-On MacOS, we can have both Android Studio and XCode, but on Windows, we cannot have XCode
+- Development -> Physical/Real device OR Emulator(Android)/Simulator(iOS)
+- On MacOS, we can have both Android Studio and XCode, but on Windows, we cannot have XCode
 
-Components are compiled:
+- React native benefits:
+  -> Single Codebase(Cross-platform compatibility)
+  -> Native component support
+  -> Hot reloading(changes reflect in real-time)
+  -> Development faster(don't have to rebuild whole app again & again)
+  -> Strong community support
 
-Views are compiled (i.e. the JSX code/components), and not the JS logic
+- React native is used by these apps:
+  -> Facebook(Meta)
+  -> Messenger(Meta)
+  -> Microsoft Outlook
+  -> Microsoft teams
+  -> Shopify
+  -> Flipkart
+  -> Discord
 
-Browser                    Android               ios                 react-native JSX
-<div>                 -   <ViewGroup>     -     <UIView>        -        <View>
-<p>                   -   <TextView>      -   <UITextView>      -        <Text>
-<input type="text">   -   <EditText>      -   <UITextField>     -      <TextInput>  
-<img>                 -   <ImageView>     -   <UIImageView>     -        <Image>
+- Core Components(<View>, <Text>, <Image>, <FlatList>, etc.)
+  -> They are abstractions over native platform components
+  -> Written in JS, but render to native components, simplifies dev. by hiding platform specific complexities
+  -> Cross-platform by design, Provides consitent behavior accross platforms
+  -> Invokes Native components at run-time
 
-React Native maps(and compiles) reusable components to respective platform equivalents(native views)
-Logic(JS) runs on a JS thread, hosted by RN (in the app)
+- Native components(Android: ViewGroup, ImageView, TextView ; iOS: UIView, UIIMageView, UITextView)
+  -> Custom components written in native languages(Swift, Java, Kotlin) and exposed to RN
+  -> Access to low-level system APIs(bluetooth/nfc), advanced native features
+  -> Platform specific by nature, optimized performance for complex tasks or rendering
 
-There is no CSS in react-native. Use either use Inline styles or StyleSheet Objects
+- Custom components: components created by us, using various core components
 
-React native benefits:
-- Single Codebase(Cross-platform compatibility)
-- Native component support
-- Hot reloading(changes reflect in real-time)
-- Development faster(don't have to rebuild whole app again & again)
-- Strong community support
+- Components are compiled:
 
-React native is used by these apps:
-- Facebook(Meta)
-- Messenger(Meta)
-- Microsoft Outlook
-- Microsoft teams
-- Shopify
-- Flipkart
-- Discord
+- Views are compiled (i.e. the JSX code/components), and not the JS logic
+
+  Browser                    Android               ios                 react-native JSX
+  <div>                 -   <ViewGroup>     -     <UIView>        -        <View>
+  <p>                   -   <TextView>      -   <UITextView>      -        <Text>
+  <input type="text">   -   <EditText>      -   <UITextField>     -      <TextInput>  
+  <img>                 -   <ImageView>     -   <UIImageView>     -        <Image>
+
+- React Native maps(and compiles) reusable components to respective platform equivalents(native views)
+- Logic(JS) runs on a JS thread, hosted by RN (in the app)
+
+- Styling: There is no CSS in react-native. Use either use Inline styles or StyleSheet Objects
+  1. give a style prop to component, a plain old JS object
+  2. StyleSheet.create({}) (preferred because it includes validation in style)
+  -> Style names are written in camel casing
+  -> 'style' prop can be an object or an array of styles(objects), the last style in the array has precedence
+  -> All dimensions in React Native are unitless, and represent density-independent pixels.
+
+- Props: properties, used for customizing the child component, component shouldn't change props directly
+- State: component's personal data storage, component can modify it
+  -> We can add state using useState hook
+- Hook: It is a function that lets you use React features. ex: useState, useEffect
+
+- React component file mainly consists of 4 parts:
+  1. Import libraries - we need to create a componentf
+  2. Create a component - a function that returns some JSX
+  3. Create a stylesheet - to style our component/import stylesheet
+  4. Export the component
 
 NativeWind allows us to write TailwindCSS like syntax in our React-Native app
 
-<Text> : just like p and h* tags in HTML, display text
+ -------------------------------------------- COMPONENTS --------------------------------------------
 
-<View> : used to create layout structures for other components, uses flexbox by default(by-default flex-direction is column in react-native)
+- Text : just like p and h* tags in HTML, display text
 
-<TouchableOpacity> : fades in opacity when pressed, button, fully-customisable
+- View : used to create layout structures for other components, uses flexbox by default(by-default flex-direction is column in react-native)
 
-<Button> : native component, very less customisable
+- Buttons
+  -> <Button/>: very simple component for showing a native button and detecting a press(Not very customisable), props: title, onPress, color, 
 
-<TextInput> : onChangeText, 
+- Touchables: can capture tapping and gestures, no default styling
+  1. <TouchableOpacity>: Highly customisable component that can detect a press on just about any kind of element
+  2. <TouchableWithoutFeedback>
+  3. <TouchableHighlight>
 
-<ScrollView> : Use scroll View as it is scrollable unlike view, props: pagingEnabled, horizontal
+- TextInput
+  -> Allows user to enter text
+  -> props: onChangeText, onSubmitEditing, defaultValue, placeholder(we will see when there is no text)
 
-<FlatList> : alternative to ScrollView, use when we have a long list, not all items are rendered at the same time, props: data, renderItem
+- ScrollView
+  -> generic scrolling container, we cannot scroll if we use <View> and the page is full of content
+  -> can be scrolled horizontally or vertically(by-default)
+  -> props: horizontal, pagingEnabled
+  -> disadavantage: all the elements and views of a ScrollView are rendered, even if they are not currently shown on the screen
 
-<ActivityIndicator> : show loader(spinner), customise size and color
+- Building list with react: .map(), FlatList, SectionList
+- FlatList
+  -> Turns an array into a list of elements, creates a scrollable list
+  -> Unlike Scrollview, FlatList only renders elements that are currently showing on the screen, not all the elements at once.
+  -> required props: 'data'(array) and 'renderItem'(function that returns JSX element)
+  -> Comparing with React.js, we might be used to mapping an array of data to build a list - FlatList is better with RN
+  -> without a keyExtractor prop: react-native deletes the whole list and rebuild the new list with updated data
+  -> with a keyExtractor prop: react-native only updates the data which needs to be updated(performance optimisation)
+  -> other props: horizontal, showsHorizontalScrollIndicator, 
+
+- SectionList
+  -> If we want to render a set of data broken into logical sections, maybe with section headers
+  -> props: 'sections'(array), 'renderItem'(function that returns JSX), 'renderSectionHeader'(function to return JSX element)
+  -> 
+
+- ActivityIndicator
+  -> show loader(spinner), customise size and color
+
+- Images
+  1. Static Image Resource: <Image source={require('./my-icon.png')} />
+  2. Network Images: <Image source={{uri: 'https://reactjs.org/logo-og.png'}} style={{height: 200, width: 300}} />
+
+- ImageBackground
+  -> Used when we want to use an image as background
+
+-------------------------------------------- HOOKS --------------------------------------------
+
+useColorScheme is a hook in react-native which returns 'light'/'dark'/null based on the current user preferred color scheme
+
+-------------------------------------------- MISC. --------------------------------------------
+
+- Flexbox
+  -> A view is by-default flexbox, with flexDirection set to 'column'
+
+- Platform specific code
+  1. Platform module: ex: import {Platform} from 'react-native'; Platform.OS => 'android', 'ios', 
+  2. Platform specific extension: make different files, ex: BigButton.ios.js, BigButton.android.js , RN will detect the file and load accordingly
 
 Installation
 
@@ -62,8 +138,6 @@ Setup PATH(environment variable) of JAVA_HOME, ANDOIRD_SDK_ROOT(ANDROID_HOME), a
 Download atleast 2 versions of android in android studio sdk manager
 
 Resource:
-
-useColorScheme is a hook in react-native which returns 'light'/'dark'/null based on the current user preferred color scheme
 
 Misc.
 chocolatey is a package manager for windows
