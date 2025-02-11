@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
@@ -8,6 +7,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+// TODO: Add the functionality of changing the order of todo
+// TODO: Add the functionality of editing any todo
+// TODO: Add the functionality of adding animation when adding any todo
 export default function App() {
   const [todos, setTodos] = useState(["Study", "Buy groceries"]);
   const [todoInput, setTodoInput] = useState("");
@@ -36,7 +38,7 @@ export default function App() {
       </TouchableOpacity>
       {todos.length ? (
         todos.map((todo, index) => (
-          <View style={styles.todolist}>
+          <View style={styles.todolist} key={todo}>
             <Text>{todo}</Text>
             <View style={styles.btnGroup}>
               <TouchableOpacity

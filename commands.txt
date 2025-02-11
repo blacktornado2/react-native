@@ -18,6 +18,7 @@ java --version : check which version of java and openjdk is installed
 * npm(node package manager)
 - npm start : start the server(for expo apps, this command translates to expo start)
 - npm start --reset-cache : start the server and reset the cache
+- npm start --port=<portNumber> : start the bundler on the port specified
 - npm i -g expo-cli : install expo-cli globally
 - expo-cli start --tunnel : start the server(metro bundler) with a tunnel (useful when running app on a physical device)
  

@@ -42,7 +42,7 @@ export default function App() {
   };
 
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text>Enter your city</Text>
       <TextInput style={styles.input} onChangeText={setCity} value={city} />
       <Button title="Submit" onPress={fetchWeather} />
@@ -50,7 +50,7 @@ export default function App() {
         <ActivityIndicator size="large" color="red" />
       ) : (
         <Text style={styles.temperatureTitle}>
-          Temperature: {weather?.temperature}&deg;C
+          Temperature : {weather?.temperature}&deg;C
         </Text>
       )}
     </ScrollView>
@@ -58,6 +58,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 50,
+    justifyContent: 'center'
+  },
   input: {
     borderWidth: 1,
     borderColor: 'black',

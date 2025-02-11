@@ -65,11 +65,11 @@
 
 NativeWind allows us to write TailwindCSS like syntax in our React-Native app
 
- -------------------------------------------- COMPONENTS --------------------------------------------
+-------------------------------------------- COMPONENTS --------------------------------------------
 
 - Text : just like p and h* tags in HTML, display text
 
-- View : used to create layout structures for other components, uses flexbox by default(by-default flex-direction is column in react-native)
+- View : container, used to create layout structures for other components, uses flexbox by default(by-default flex-direction is column in react-native), props: hitSlop, style, 
 
 - Buttons
   -> <Button/>: very simple component for showing a native button and detecting a press(Not very customisable), props: title, onPress, color, 
@@ -127,7 +127,20 @@ useColorScheme is a hook in react-native which returns 'light'/'dark'/null based
   1. Platform module: ex: import {Platform} from 'react-native'; Platform.OS => 'android', 'ios', 
   2. Platform specific extension: make different files, ex: BigButton.ios.js, BigButton.android.js , RN will detect the file and load accordingly
 
- -------------------------------------------- INSTALLATION --------------------------------------------
+-------------------------------------------- FILE AND FOLDER STRUCTURE --------------------------------------------
+1.
+ -src
+    |--- assets(animations, fonts, images)
+    |--- components
+    |--- constants
+    |--- hooks
+    |--- navigations
+    |--- screens
+    |--- types
+    |--- utils(api, authorize)
+    |--- redux
+
+-------------------------------------------- INSTALLATION --------------------------------------------
 
   1. Windows
   Node.js
