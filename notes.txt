@@ -52,9 +52,12 @@
   -> 'style' prop can be an object or an array of styles(objects), the last style in the array has precedence
   -> All dimensions in React Native are unitless, and represent density-independent pixels.
 
-- Props: properties, used for customizing the child component, component shouldn't change props directly
+- Props: properties, used for customizing the child component, child component shouldn't change props directly
 - State: component's personal data storage, component can modify it
   -> We can add state using useState hook
+  -> If the state changes, component will re-render
+  -> state of one component, can be props to another component
+  -> We never directyl modify state variable, we  modify it using the setter function
 - Hook: It is a function that lets you use React features. ex: useState, useEffect
 
 - React component file mainly consists of 4 parts:
