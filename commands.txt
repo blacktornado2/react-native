@@ -21,6 +21,7 @@ java --version : check which version of java and openjdk is installed
 - npm start --port=<portNumber> : start the bundler on the port specified
 - npm i -g expo-cli : install expo-cli globally
 - expo-cli start --tunnel : start the server(metro bundler) with a tunnel (useful when running app on a physical device)
+- npm list <packageName> : List which version of the package is installed(we can compare it with package.json version)
  
 * ADB(Android Debug Bridge)
 - adb devices : list the devices

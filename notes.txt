@@ -121,6 +121,61 @@ NativeWind allows us to write TailwindCSS like syntax in our React-Native app
 
 useColorScheme is a hook in react-native which returns 'light'/'dark'/null based on the current user preferred color scheme
 
+-------------------------------------------- NAVIGATION --------------------------------------------
+
+Types of navigation:
+1. Stack Navigation (for moving between screens)
+2. Tab Navigation (for bottom or top tabs)
+3. Drawer Navigation (for side menu)
+4. Nested Navigation (combining navigators)
+
+-> Stack Navigation
+- Snippet:
+
+App.js
+
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+import HomeScreen from './HomeScreen';
+import DetailsScreen from './DetailsScreen';
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+HomeScreen.js
+
+import { View, Text, Button } from 'react-native';
+import React from 'react';
+
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View>
+      <Text>HomeScreen</Text>
+      <Button title='Go to Details' onPress={() => navigation.navigate('Details')} />
+    </View>
+  );
+};
+
+export default HomeScreen;
+
+- We can customise header of a Stack navigator by using the "options" prop(in <Stack.Screen />)
+
+- We can pass data from one screen to other
+- Snippet:
+  navigation.navigate('Details', { userId: 42 });
+  const { userId } = route.params;
+
 -------------------------------------------- MISC. --------------------------------------------
 
 - Flexbox
