@@ -52,12 +52,13 @@
   -> 'style' prop can be an object or an array of styles(objects), the last style in the array has precedence
   -> All dimensions in React Native are unitless, and represent density-independent pixels.
 
-- Props: properties, used for customizing the child component, child component shouldn't change props directly
-- State: component's personal data storage, component can modify it
+- Props: properties, used for customizing the child component(reusability), undirectional flow, child component shouldn't change props directly(read only)
+- State: component's personal data storage, component can modify it(unlike props)
   -> We can add state using useState hook
   -> If the state changes, component will re-render
   -> state of one component, can be props to another component
-  -> We never directyl modify state variable, we  modify it using the setter function
+  -> We never directly modify state variable, we  modify it using the setter function
+- If props or state changes, component will re-render
 - Hook: It is a function that lets you use React features. ex: useState, useEffect
 
 - React component file mainly consists of 4 parts:
@@ -123,13 +124,14 @@ useColorScheme is a hook in react-native which returns 'light'/'dark'/null based
 
 -------------------------------------------- NAVIGATION --------------------------------------------
 
-Types of navigation:
-1. Stack Navigation (for moving between screens)
-2. Tab Navigation (for bottom or top tabs)
-3. Drawer Navigation (for side menu)
-4. Nested Navigation (combining navigators)
+Types of navigators:
+1. Stack Navigator (for moving between screens, '@react-navigation/stack' and '@react-navigation/native-stack') 
+2. Bottom Tab Navigator (for bottom tabs, '@react-navigation/bottom-tabs')
+3. Material Top Tab Navigator(for top tabs, '@react-navigation/material-top-tabs')
+4. Drawer Navigator (for side menu, '@react-navigation/drawer')
+5. Nested Navigator (combining navigators)
 
--> Stack Navigation
+-> Stack Navigator
 - Snippet:
 
 App.js
@@ -184,6 +186,11 @@ export default HomeScreen;
 - Platform specific code
   1. Platform module: ex: import {Platform} from 'react-native'; Platform.OS => 'android', 'ios', 
   2. Platform specific extension: make different files, ex: BigButton.ios.js, BigButton.android.js , RN will detect the file and load accordingly
+
+- RN component life cycle: The React Native component lifecycle consists of several phases: mounting, updating, and unmounting.
+  1. During mounting, the component is created and inserted into the DOM. 
+  2. During updating, it receives new props or states and updates(re-renders) accordingly. 
+  3. During unmounting, the component is removed from the DOM
 
 -------------------------------------------- FILE AND FOLDER STRUCTURE --------------------------------------------
 1.

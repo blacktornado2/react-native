@@ -2,11 +2,23 @@
 
 java --version : check which version of java and openjdk is installed
 
-* Expo
-- npx create-expo-app <path> : Create a new project with expo, project with some default functionalities 
-- npx create-expo-app <path> --template : Create a new project with expo, and choose template to begin with(-t is shorthand for template)
-- npx create-expo-app <path> --template blank : Create a minimal expo-app
-- npx create-expo-app <path> --example <Example> : Create an expo app with example template(e.g. with-router, with-nextjs, with-formik. ref: https://github.com/expo/examples)
+* Expo(https://docs.expo.dev/tutorial/create-your-first-app/):
+ - npx create-expo-app@latest <path> : Create a new project with expo, project with some default functionalities 
+ - npx create-expo-app@latest <path> --template : Create a new project with expo, and choose template to begin with(-t is shorthand for template)
+ - npx create-expo-app@latest <path> --template blank : Create a minimal expo-app
+ - npx create-expo-app@latest <path> --example <Example> : Create an expo app with example template(e.g. with-router, with-nextjs, with-formik. ref: https://github.com/expo/examples)
+ - npm run reset-project : Reset the project
+ - npx expo start : Start the development server
+
+If the Expo SDK is not compatible with Expo Go, upgrade Expo SDK(https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/): 
+
+1. Upgrade the Expo SDK:
+ - npx expo install expo@latest : Upgrade to the latest version
+ - npx expo install expo@^53.0.0 : Upgrade to a specific version
+
+2. Upgrade dependencies
+ - npx expo install --fix
+
 
 * react-native CLI
 - npx react-native init <path> : Create a new project with react-native
@@ -23,6 +35,9 @@ java --version : check which version of java and openjdk is installed
 - expo-cli start --tunnel : start the server(metro bundler) with a tunnel (useful when running app on a physical device)
 - npm list <packageName> : List which version of the package is installed(we can compare it with package.json version)
  
+ * Misc.
+ - npx tailwind init : Initialize a tailwind.config.js file
+
 * ADB(Android Debug Bridge)
 - adb devices : list the devices
 - adb --help : list all tge commands of adb

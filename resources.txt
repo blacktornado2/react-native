@@ -1,3 +1,5 @@
 1. https://reactnative.dev/ : React-native documentation
 2. https://www.youtube.com/watch?v=mJ3bGvy0WAY : React-native beginner level app
 3. https://instamobile.io/android-development/generate-react-native-release-build-android/ : Build the react-native app for android
+4. https://www.turing.com/interview-questions/react-native : React-native interview questions
+5. https://www.interviewbit.com/react-native-interview-questions/ : Interview questions
